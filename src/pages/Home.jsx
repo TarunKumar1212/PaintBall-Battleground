@@ -6,6 +6,7 @@ import HeroSection from "../Component/HeroSection"
 function Home() {
   return (
     <div>
+        
         <Carousel/>
         <HeroSection/>
         <AdvantagesSection/>
