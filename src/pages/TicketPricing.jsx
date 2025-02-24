@@ -19,7 +19,7 @@ const TicketPricing = () => {
     
     <>
        <div className= " mt-15  py-10 px-5 bg-gray-300 min-h-screen  ">
-      <h2 className="text-3xl font-bold text-center text-cyan-600 mb-8">Ticket Pricing</h2>
+      <h2 className="text-3xl font-bold text-center text-blue-600 mb-8 ">Ticket Pricing</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {pricingData.map((ticket, index) => (
           <div
@@ -32,7 +32,7 @@ const TicketPricing = () => {
             <div className="p-6 text-center">
               <p className="text-gray-700 mb-4">{ticket.category}</p>
               <p className="text-2xl font-extrabold text-gray-800 mb-6">{ticket.price}</p>
-              <button className="group-hover:bg-blue-500 cursor-pointer  bg-yellow-400 text-white font-bold py-2 px-6 rounded-full hover:bg-yellow-500 transition">
+              <button className="group-hover:bg-blue-500 cursor-pointer  bg-yellow-400 text-white font-bold py-2 px-6 rounded-full hover:bg-green-500 transition">
                 Buy Now
               </button>
             </div>

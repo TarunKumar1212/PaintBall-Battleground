@@ -26,7 +26,7 @@ const Navbar = () => {
         </ul>
 
         {/* Book Now Button */}
-        <Link to="/booking" className="hidden md:block bg-green-600 text-white font-medium px-4 py-2 rounded-full hover:bg-yellow-700 transition">
+        <Link to="/booking" className="hidden md:block bg-green-500 text-white font-medium px-4 py-2 rounded-full hover:bg-yellow-400 transition">
           Book Now
         </Link>
 
@@ -46,7 +46,7 @@ const Navbar = () => {
             <li><Link to="/reviews" className="block hover:underline decoration-red-600 decoration-2 underline-offset-4" onClick={closeMenu}>Reviews</Link></li>
             <li><Link to="/prices" className="block hover:underline decoration-red-600 decoration-2 underline-offset-4" onClick={closeMenu}>Prices</Link></li>
             <li>
-              <Link to="/booking" className="block bg-green-600 text-center text-black px-4 py-2 rounded-full hover:bg-yellow-700 transition" onClick={closeMenu}>
+              <Link to="/booking" className="block bg-green-600 text-center text-black px-4 py-2 rounded-full hover:bg-yellow-500 transition" onClick={closeMenu}>
                 Book Now
               </Link>
             </li>

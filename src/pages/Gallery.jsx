@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Img1 from "../assets/Gallery/1.jpg";
 import Img2 from "../assets/Gallery/2.jpg";
 import Img3 from "../assets/Gallery/3.jpg";
@@ -7,7 +8,6 @@ import Img5 from "../assets/Gallery/5.jpg";
 import Img6 from "../assets/Gallery/6.jpg";
 import Footer from "../Component/Footer";
 
-
 const images = [
   { id: 1, src: Img1, alt: "Paintball Action Shot 1" },
   { id: 2, src: Img2, alt: "Paintball Gear" },
@@ -15,12 +15,6 @@ const images = [
   { id: 4, src: Img4, alt: "Paintball Action Shot 2" },
   { id: 5, src: Img5, alt: "Game Strategy" },
   { id: 6, src: Img6, alt: "Celebration Moment" },
-  { id: 7, src: Img6, alt: "Celebration Moment" },
-  { id: 8, src: Img6, alt: "Celebration Moment" },
-  { id: 9, src: Img6, alt: "Celebration Moment" },
-  { id: 10, src: Img6, alt: "Celebration Moment" },
-  { id: 11, src: Img6, alt: "Celebration Moment" },
-  { id: 12, src: Img6, alt: "Celebration Moment" },
 ];
 
 const Gallery = () => {
@@ -33,34 +27,69 @@ const Gallery = () => {
 
   return (
     <>
-    
       <div className="mt-10 py-10 px-4 md:px-20">
-        <h2 className="text-3xl font-bold text-center mb-8">Paintball Gallery</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <motion.h2 
+          className="text-3xl font-bold text-center mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Paintball Gallery
+        </motion.h2>
+
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+          }}
+        >
           {images.map((image) => (
-            <div
+            <motion.div
               key={image.id}
-              className="cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:scale-105 transition-transform"
+              className="cursor-pointer overflow-hidden rounded-2xl shadow-lg"
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+              }}
+              whileHover={{ scale: 1.05, rotate: 1 }}
               onClick={() => setSelectedImage(image)}
             >
-              <img src={image.src} alt={image.alt} className="w-full h-60 object-cover" />
-            </div>
+              <motion.img 
+                src={image.src} 
+                alt={image.alt} 
+                className="w-full h-60 object-cover"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Lightbox Overlay */}
-        {selectedImage && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-            onClick={() => setSelectedImage(null)}
-          >
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="max-w-full max-h-full rounded-lg"
-            />
-          </div>
-        )}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+            >
+              <motion.img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-full rounded-lg shadow-2xl"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       <Footer />
     </>
