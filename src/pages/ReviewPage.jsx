@@ -2,8 +2,13 @@ import { useState } from "react";
 import Crousal from "../Component/Crousal";
 // import ReviewBg from "../assets/Image2/img2.webp";
 import Footer from "../Component/Footer";
+import { useEffect } from "react"; //
 
 export default function ReviewPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [reviews, setReviews] = useState([]);
   const [name, setName] = useState("");
   const [review, setReview] = useState("");

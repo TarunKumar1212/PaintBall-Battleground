@@ -1,10 +1,18 @@
 import img1 from "../assets/ImgAbout/img1.jpg"
 import AdvantagesSection from "../Component/AdvantagesSection ";
 import Footer from "../Component/Footer";
-
+import { useEffect } from "react"; //
 
 const About = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
+
+    
+    
     <div className="mt-[65px] bg-gray-100">
     <section className=" text-white py-12">
       <div className="container mx-auto px-6 lg:px-12">
@@ -24,12 +32,12 @@ const About = () => {
               WELCOME TO PAINTBALL BATTLEFIELD
             </h2>
             <p className="mt-4 text-lg text-black">
-              Experience the thrill of combat at *Paintball Battlefield*,
-              Ranchi's ultimate adventure sports destination. Located at *Shahid Sankalp Children Park, near Ranchi University, Morabadi, Ranchi, Jharkhand 834008*, we bring you an action-packed paintball experience like no other!
+              Experience the thrill of combat at Paintball Battlefield,
+              Ranchi&apos;s ultimate adventure sports destination. Located at Shahid Sankalp Children Park, near Ranchi University, Morabadi, Ranchi, Jharkhand 834008, we bring you an action-packed paintball experience like no other!
             </p>
             <p className="mt-4 text-black  leading-relaxed">
-              Whether you're planning a *weekend adventure, a corporate event, or a fun day out* with friends, our top-notch equipment, expert referees, and thrilling battlefields ensure an adrenaline-pumping experience. 
-              Safety is our priority, and we provide *professional-grade gear* to keep every match exciting yet secure.
+              Whether you&apos;re planning a weekend adventure, a corporate event, or a fun day out with friends, our top-notch equipment, expert referees, and thrilling battlefields ensure an adrenaline-pumping experience. 
+              Safety is our priority, and we provide professional-grade gear to keep every match exciting yet secure.
             </p>
 
             <div className="mt-6">
