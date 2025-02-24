@@ -30,7 +30,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white">Contact Us</h3>
             <p className="mt-3 text-gray-400">
-              Shahid Sankalp Children Park, near Ranchi University, Morabadi, <br />
+              Shahid Sankalp Children Park, near Oxygen Park, Morabadi, <br />
               Ranchi, Jharkhand 834008
             </p>
             <p className="mt-2">Phone: <a href="tel:+919939993293" className="hover:text-white">+919939993293</a></p>

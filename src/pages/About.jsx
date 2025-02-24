@@ -76,7 +76,7 @@ const About = () => {
               >
                 <p className="font-semibold text-gray-800">📍 Location:</p>
                 <p className="text-gray-700">
-                  Shahid Sankalp Children Park, near Ranchi University, Morabadi, Ranchi, Jharkhand 834008
+                  Shahid Sankalp Children Park, near Oxygen Park, Morabadi, Ranchi, Jharkhand 834008
                 </p>
 
                 <p className="mt-4 font-semibold text-gray-800">📞 Contact Us:</p>

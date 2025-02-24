@@ -26,7 +26,7 @@ const Navbar = () => {
         </ul>
 
         {/* Book Now Button */}
-        <Link to="/booking" className="hidden md:block bg-green-500 text-white font-medium px-4 py-2 rounded-full hover:bg-yellow-400 transition">
+        <Link to="/booking" className="hidden md:block bg-green-500 text- font-medium px-4 py-2 rounded-full hover:bg-yellow-400 transition">
           Book Now
         </Link>
 
