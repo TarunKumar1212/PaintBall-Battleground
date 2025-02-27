@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Component/Footer";
 import { FaTicketAlt } from "react-icons/fa"; // Import Ticket Icon
+import img from "../assets/Images/Img2.jpg"; // Import Background Image
 
 const TicketPricing = () => {
   // Dynamic Pricing Data
@@ -18,15 +19,20 @@ const TicketPricing = () => {
 
   return (
     <>
-      {/* Header Section with Background */}
+      {/* Header Section with Background Image */}
       <div
-        className="relative bg-cover bg-center h-64 flex items-center justify-center text-white"
+        className="mt-20 relative h-64 flex items-center justify-center text-white bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://source.unsplash.com/1600x900/?amusement,park')",
+          backgroundImage: `url(${img})`, // Set Image as Background
         }}
       >
+        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <h1 className="text-4xl font-bold relative z-10">🎟️ Get Your Tickets Now! 🎟️</h1>
+
+        {/* Title */}
+        <h1 className="text-4xl font-bold relative z-10">
+          🎟️ Get Your Tickets Now! 🎟️
+        </h1>
       </div>
 
       {/* Ticket Pricing Section */}
