@@ -1,5 +1,6 @@
-import { Facebook, Instagram, Mail, Target } from "lucide-react"; // Lucide icons
-
+import { Facebook, Instagram, Mail } from "lucide-react"; // Lucide icons
+import logo from "../assets/Logo/logo.jpg"
+import {Link} from "react-router-dom"
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-10">
@@ -8,7 +9,8 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div>
             <div className="flex items-center justify-center md:justify-start gap-2">
-              <Target className="w-6 h-6 text-red-500" />
+              {/* <Target className="w-6 h-6 text-red-500" /> */}
+              <img className="h-10 w-10 object-cover rounded-full mr-2" src={logo} alt="logo" />
               <h2 className="text-xl font-bold text-white">Paintball Battlefield</h2>
             </div>
             <p className="mt-3 text-gray-400">The ultimate adventure sports destination</p>
@@ -50,7 +52,8 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center mt-8 text-gray-500 text-sm">
-          © 2025 Paintball Battlefield. All rights reserved.
+        <Link target="_blank" to="https://vasumathasoftech.com/">  © 2025 Paintball Battlefield. Design and powered by 
+        <p className="text-orange-400 font-bold">VM Softech</p></Link>
         </div>
       </div>
     </footer>
